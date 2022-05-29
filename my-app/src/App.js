@@ -1,12 +1,23 @@
 
 
-let hello= <h1>Hello World</h1>
+
+function saluto(name){
+  return(
+    <h1>hello {name} </h1>
+  )
+}
 function App() {
   return (
     <div className="App">
-      {hello}
+     {saluto('piero')}
+
+
     </div>
   );
 }
+
+
+
+
 
 export default App;
