@@ -1,15 +1,15 @@
-
-
-
-function saluto(name){
+function sum(a,b){
   return(
-    <h1>hello {name} </h1>
-  )
+<h2>{a+b}</h2>
+)
 }
+
+
 function App() {
   return (
     <div className="App">
-     {saluto('piero')}
+     {sum(2,2)}
+
 
 
     </div>
