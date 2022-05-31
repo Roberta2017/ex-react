@@ -3,17 +3,20 @@ import { Age } from './Age'
 
 export class Welcome extends React.Component{
     render(){
-    /* let scelta;
+     let scelta;
     
     
         if(this.props.name==='John'){
            scelta=  <p> Welcome {this.props.name}</p>
-        } */
+        } 
         return(
             <span>
 
+
+       {scelta}
+
         
-     Welcome {this.props.name==='John'&& <span> {this.props.name}</span> }
+    { /*  Welcome {this.props.name==='John'&& <span> {this.props.name}</span> } */}
             
           
       
