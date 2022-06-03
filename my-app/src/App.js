@@ -1,10 +1,12 @@
 import React from 'react';
-import {Counter} from './Counter'
+
+import {TrackCounter} from './TrackCounter'
 
 function App() {
   return (
     <div className="App">
-      <Counter/>
+      
+      <TrackCounter/>
     </div>
   );
 }
