@@ -22,19 +22,21 @@ handleCheck = ( event) => {
     )
 }
 
-componentDidUpdate() {
+onLogin() {
     console.log(this.state)
 }
 
     render(){
         return(
             <div>
-                <input name="name" placeholder="insert your name" onChange = {this.handleChange}  />
-                <input type="password" placeholder="insert your password" onChange = {this.handleChange} />
-                <label>Check me</label>
-                <input type="checkbox" onChange = {this.handleCheck} />
+                <div><input name="name" value={this.state.name} placeholder="insert your name" onChange = {this.handleChange}  /></div>
+                <div><input type="password" name="password" value={this.state.password} placeholder="insert your password" onChange = {this.handleChange} /></div>
+                <div><label>Check me</label>
+                <input type="checkbox" onChange = {this.handleCheck} /></div>
+                <div><button disabled = {(this.state.name === '' || this.state.password === '') ? true :false} onClick={this.onLogin}>Invia</button></div>
             </div>
+            
         )
     }
-
 }
+
