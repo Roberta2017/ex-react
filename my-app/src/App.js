@@ -1,13 +1,13 @@
 import React from "react";
 
-import { Login } from "./Login";
+import {UncontrolLogin}from "./UncontrolLogin"
 
 
 function App() {
   return (
     <div className="App">
-
-     <Login/>
+<UncontrolLogin/>
+ 
     </div>
   );
 }
