@@ -22,8 +22,17 @@ handleCheck = ( event) => {
     )
 }
 
-onLogin() {
+onLogin=()=> {
     console.log(this.state)
+}
+
+
+
+reset=()=>{
+    this.setState({
+        name: '',
+        password: ''
+    })
 }
 
     render(){
@@ -34,6 +43,7 @@ onLogin() {
                 <div><label>Check me</label>
                 <input type="checkbox" onChange = {this.handleCheck} /></div>
                 <div><button disabled = {(this.state.name === '' || this.state.password === '') ? true :false} onClick={this.onLogin}>Invia</button></div>
+                <div><button onClick = {this.reset}>Reset</button></div>
             </div>
             
         )
