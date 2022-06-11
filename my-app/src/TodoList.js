@@ -7,13 +7,14 @@ export class TodoList extends React.Component{
     }
 buttonOnClick = (event => {
     event.preventDefault()
-    this.setState(()=>{
-        return{
+    
+    this.setState({
+        items: [...this.state.items, event.target.elements.items.value],
 
-        
-            items : [...this.state.items, event.target.elements.items.value]
-        }
     })
+
+    event.target.reset()
+
 })
 
 
