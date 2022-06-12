@@ -24,6 +24,16 @@ export class TodoList extends React.Component{
       };
 
    
+      handleRemove = (event) =>{
+        console.log()
+        this.setState((state)=>{
+            return{
+                items: state.items.filter((items) =>{
+                return items !== event.target.previousSibling.innerText
+                })
+            }
+        })
+      }
 
 
 
@@ -32,7 +42,12 @@ export class TodoList extends React.Component{
 
         return(
             <div>
-                <ul>{Object.values(this.state.items).map(param => <li>{param}</li>)} </ul>
+                <ul>{Object.values(this.state.items).map(items => 
+                <div>
+                    <li key={items.id}>{items}</li>
+                    <button onClick={this.handleRemove}>Remove</button>
+                </div>
+                    )}</ul>
                 <form onSubmit = {this.buttonOnClick}>
                     <input name="items" type="text" />
                     <button type ="submit">Click me</button>
