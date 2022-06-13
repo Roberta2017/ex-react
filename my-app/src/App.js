@@ -5,7 +5,7 @@ import {Welcome} from './Welcome'
 
 function App() {
   return (
-    <Container>
+    <Container title = "questo è il titolo del container">
 
      <h1>La mia applicazione in react</h1>
      <Welcome/>
