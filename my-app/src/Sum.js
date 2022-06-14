@@ -1,8 +1,11 @@
 import React from "react";
 
-function Sum(props){
+function Sum({num=[1,2,3,4]}){
     return(
-        <h1>la somma è {props.num.reduce((total, current) => { return (total += current)})}</h1>
+        <div>
+          <h1> la somma è {num.reduce((total, current) => { return (total += current) })}</h1>
+        </div>
+        
     )
 }
 
