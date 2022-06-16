@@ -1,24 +1,25 @@
 import {useEffect, useState } from "react"
 
- function Counter ({onCounterChange}){
+function Counter() {
     const [counter, setCounter] = useState(0)
-      
-     useEffect(()=> {
-        onCounterChange(counter)
-     }, [counter])
+
+    const intervalID = () => setInterval(() => { setCounter(counter + 1)
+    
+    }, 500)
+
+
+    useEffect(() => { 
+         intervalID()
+    }, [counter])
 
     
+    useEffect(() => {
+        return () => {
+            clearInterval(intervalID)
+        }
+    }, [])
+    return <h1>Counter:{counter}</h1>
+}
 
-    let handleCounterIncrement = () => {
-        setCounter(count => count +1)
-    }
-    return(
-        <div>
-            <h2>Counter: {counter} </h2>
-            <button onClick={handleCounterIncrement}>Increment</button>
-            <h1>{counter}</h1>
-        </div>
-    )
-} 
 
 export default Counter
