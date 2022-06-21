@@ -1,15 +1,19 @@
 import React from 'react';
-import GitHubUser from './GitHubUser';
+import { Route, Routes } from 'react-router-dom';
+import {ShowGitHubUser} from './ShowGitHubUser';
 
 
 
-function App() {
 
-  return (
-    <div className="App">
-      <GitHubUser username="Roberta2017"/>
+export function App(){
+  return(
+    <div>
+      <Routes>
+        <Route path ='/:username' element ={<ShowGitHubUser />} />
+      </Routes>
     </div>
-  );
+  )
 }
 
-export default App;
+
+

@@ -1,11 +1,11 @@
 import React, { useEffect } from "react";
 import { useState } from 'react'
 
-function GitHubUser({ username }) {
-const [object, setObject] = useState('')
+export function GitHubUser({ username }) {
+    const [object, setObject] = useState('')
 
     useEffect(() => {
-        
+
 
 
         async function gitFetch() {
@@ -19,7 +19,7 @@ const [object, setObject] = useState('')
         } gitFetch()
     }
 
-        , [username])
+        , [username]);
 
 
 
@@ -37,4 +37,3 @@ const [object, setObject] = useState('')
     )
 }
 
-export default GitHubUser
