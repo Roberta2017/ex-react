@@ -1,5 +1,5 @@
 import React from 'react';
-import GitHubUser from './GitHubUser';
+import GitHubUserList from './GitHubUserList';
 
 
 
@@ -7,7 +7,7 @@ function App() {
 
   return (
     <div className="App">
-      <GitHubUser username="Roberta2017"/>
+      <GitHubUserList/>
     </div>
   );
 }
