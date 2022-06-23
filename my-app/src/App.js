@@ -11,14 +11,17 @@ export function App(){
     <>
     <div>
       <Routes>
-        <Route path ='/:username' element ={<ShowGitHubUser />} />
+        <Route path ='/user' >
+          <Route path =':username' element ={<ShowGitHubUser/>} />
+        </Route>
         <Route path ='/' element={<Welcome />} />
         <Route path ='/counter' element={<Counter/>} />
+        <Route path='*' element={<h1>Error 404 page not found</h1>} />
       </Routes>
     </div>
     <div>
       <Link to="/counter">Counter</Link>
-      <Link to ="/githubuser/Roberta2017"> Git Profile</Link>
+      <Link to ="/user"> Git Profile</Link>
       <Link to="/">Welcome</Link>
     </div>
     </>
