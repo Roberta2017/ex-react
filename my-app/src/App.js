@@ -1,13 +1,13 @@
 import React from 'react';
+import {Forms} from './Forms'
 
-import  Counter  from './Counter';
 
  function App() {
   return (
     <div className="App">
-      <Counter/>
+ <Forms/>
     </div>
-  );
+  )
 }
 
 export default App;
