@@ -1,11 +1,17 @@
-import useGithubUser from './useGithubUser'
+import { useGithubUser } from './useGithubUser'
 
-function GithubUser({username}){
-    const {object, error, isLoading} = useGithubUser(username)
-    return <>
-    {isLoading && <h1>Loading..</h1>}
-    {error && <h1>{error.testo}</h1>}
-    {Object && <div><h1>{object.login}</h1></div>}
-    <img src = {object.avatar_url} ></img>
-    </>
-}export default GithubUser
+
+
+export default function HookGithubUser({username}){
+    const { object, error } = useGithubUser(username)
+    return(
+        <div>
+            {object && <h1>{`name: ${data.login}`}</h1>}
+            {error && <h2>error</h2>}
+            {<img src={object.avatar_url} alt={`Avatar di: ${object.name}`}  />} 
+            <img src={object?.avatar_url} alt={`Avatar di: ${object?.login}`} 
+             />
+        </div>
+    )
+
+}       
