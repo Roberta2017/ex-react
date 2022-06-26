@@ -8,6 +8,10 @@ let testo = {
 
     en:{
         testo: "Welcome! what's your name?"
+    },
+
+    de:{
+        testo: "willkommen! wie heiße du?"
     }
 }
 
@@ -18,9 +22,9 @@ export class DisplayLanguage extends React.Component{
                 {language => {
                     return(
                         <div>
-                            <p>
+                            <h1>
                                 {testo[language].testo}
-                            </p>
+                            </h1>
                         </div>
                     )
                 }}
