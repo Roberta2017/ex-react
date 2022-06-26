@@ -1,22 +1,13 @@
-import {useState} from 'react'
+import useSWR from 'swr'
 
 
 export function useGithubUser(){
-    const [object, setObject] = useState('')
+    const fetcher=url=>fetch(url).then((response)=>response.json());
+    const {object, error}= useSWR(`https://api.github.com/users/${username}`,fetcher)
+    return{object,error, isLoading: !object && !error};
 
-    function GitFetch({username}){
-        fetch(`https://api.github.com/users/${username}`)
-        .then(response => {
-            return response.json()
-        }).then(json => {
-            
-            setObject(json)
-        })
-    }return{
-        object: object,
-        GitFetch: GitFetch
-    }
 
+  
 }
 
 

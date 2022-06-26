@@ -1,5 +1,5 @@
 import { useState } from "react";
-export function inputTracker() {
+export function inputTrack() {
 
     const [username, setUsername] = useState('')
     const [password, setPassword] = useState('')
