@@ -1,34 +1,16 @@
 import React from "react";
-import { Context } from "./Context";
+import  Context from "./Context";
+import  useContext  from "react";
 
-let testo = {
-    it:{
-        testo: "benvenuto! come ti chiami?"
-    },
-
-    en:{
-        testo: "Welcome! what's your name?"
-    },
-
-    de:{
-        testo: "willkommen! wie heiße du?"
-    }
+function DisplayLanguage(){
+    const language = useContext(Context)
+    return(
+        <div>
+            <h1>
+                language: {language}
+            </h1>
+        </div>
+    )
 }
 
-export class DisplayLanguage extends React.Component{
-    render(){
-        return(
-            <Context.Consumer>
-                {language => {
-                    return(
-                        <div>
-                            <h1>
-                                {testo[language].testo}
-                            </h1>
-                        </div>
-                    )
-                }}
-            </Context.Consumer>
-        )
-    }
-}
+export default DisplayLanguage
