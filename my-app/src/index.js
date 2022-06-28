@@ -3,9 +3,52 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import  {store} from './state/Store'
+import {addTodo, removeTodo, changeTodo, resetTodos } from './state/TodoState'
 
 
-const root = ReactDOM.createRoot(document.getElementById('root'));/*
+store.subscribe(() => {
+  console.log(store.getState)
+})
+
+store.dispatch(addTodo({
+  id: 01,
+  title: 'esercizio 01',
+  completed: true,
+}))
+store.dispatch(addTodo({
+  id: 02,
+  title: 'esercizio 02',
+  completed: true,
+}))
+store.dispatch(addTodo({
+  id: 03,
+  title: 'esercizio 03',
+  completed: true,
+}))
+
+
+
+store.dispatch(removeTodo(1))
+store.dispatch(removeTodo(3))
+
+
+
+store.dispatch(changeTodo(1,{
+  title: 'fallo meglio',
+  completed: false
+  }))
+
+
+store.dispatch(changeTodo(2,{
+  title: 'non va ancora bene',
+  completed: false
+}))
+
+
+store.dispatch(resetTodos())
+
+
+/*const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <App />

@@ -1,14 +1,7 @@
 import createStore from "redux";
-import {counterReducer, incrementCounter } from "./CounterState";
+import {todoReducer} from "./TodoState";
 
-export const store = createStore(counterReducer)
-
-store.dispatch(incrementCounter(3))
-store.dispatch(incrementCounter(2))
+export const store = createStore(todoReducer)
 
 
-store.subscribe(()=>{
-
-    console.log(store.getState())
-})
 
