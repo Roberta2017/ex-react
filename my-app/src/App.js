@@ -1,11 +1,11 @@
 import React from 'react';
-import {Forms} from './Forms'
+import GithubUser from './GithubUser';
 
 
  function App() {
   return (
     <div className="App">
- <Forms/>
+<GithubUser/>
     </div>
   )
 }

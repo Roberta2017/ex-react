@@ -1,18 +1,21 @@
 import { useGithubUser } from "./useGithubUser"
-import { useEffect } from "react"
+
 
 export default function GithubUser({ username }) {
 
- const { object, GitFetch  } = useGithubUser(username)
+ const { object, error , loading  } = useGithubUser(username)
 
-    useEffect(() => {
-
-    }, [])
-
-    return (
-        <div>
-            {object && <h1>{`name: ${object.name}`}</h1>}
+   
+    return(
+ <div>
+          {loading && <h1>Loading...</h1>}
+          <h1>{object.login}</h1>
+          <h1>{object.name}</h1>
+          {error && <h1>{error.message}</h1>}
         </div>
+
+    )
+       
    
 }
     
